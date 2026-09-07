@@ -1,4 +1,4 @@
-const ACCESS_KEY = "d8351e79-e331-421a-b43b-71389cc350c0";
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 const nav = document.querySelector("#site-nav");
 const toggle = document.querySelector(".nav-toggle");
@@ -25,6 +25,12 @@ window.addEventListener("scroll", () => {
 form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
+
+  if (!ACCESS_KEY) {
+    statusEl.textContent = "Form is not configured. Add VITE_WEB3FORMS_ACCESS_KEY locally or as a GitHub Actions secret.";
+    statusEl.className = "form-status err";
+    return;
+  }
 
   const submit = form.querySelector('button[type="submit"]');
   const payload = new FormData(form);
