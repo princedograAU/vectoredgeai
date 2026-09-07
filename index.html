@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VectorEdge AI — AI-First Digital Solutions</title>
+    <meta
+      name="description"
+      content="VectorEdge AI helps Australian startups and small businesses build scalable web, mobile, and AI-powered solutions with rapid delivery and enterprise-grade engineering."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="nav-inner">
+        <a class="logo" href="./">
+          <span class="logo-mark" aria-hidden="true"></span>
+          VectorEdge AI
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="#contact">Book a consultation</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <svg class="hero-network" viewBox="0 0 1200 420" aria-hidden="true">
+          <defs>
+            <linearGradient id="net" x1="0" x2="1">
+              <stop offset="0" stop-color="#3b82f6" stop-opacity="0" />
+              <stop offset="0.5" stop-color="#3b82f6" stop-opacity="0.45" />
+              <stop offset="1" stop-color="#3b82f6" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <circle cx="180" cy="80" r="90" fill="none" stroke="url(#net)" stroke-width="1" />
+          <circle cx="1020" cy="120" r="130" fill="none" stroke="url(#net)" stroke-width="1" />
+          <circle cx="600" cy="300" r="160" fill="none" stroke="#3b82f6" stroke-opacity="0.12" />
+          <circle cx="280" cy="240" r="4" fill="#3b82f6" />
+          <circle cx="860" cy="70" r="3" fill="#60a5fa" />
+          <circle cx="940" cy="260" r="4" fill="#3b82f6" />
+          <circle cx="420" cy="90" r="3" fill="#93c5fd" />
+          <line x1="280" y1="240" x2="420" y2="90" stroke="#3b82f6" stroke-opacity="0.25" />
+          <line x1="860" y1="70" x2="940" y2="260" stroke="#3b82f6" stroke-opacity="0.2" />
+        </svg>
+        <div class="container hero-copy">
+          <p class="badge">Upgrade the future with AI</p>
+          <h1 id="hero-heading">AI-First Digital Solutions for Modern Businesses</h1>
+          <p class="hero-lede">
+            We help Australian startups and small businesses build scalable web, mobile, and
+            AI-powered solutions with rapid delivery and enterprise-grade engineering.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a Consultation</a>
+            <a class="btn btn-ghost" href="#services">Explore Services</a>
+          </div>
+          <div class="hero-ui" aria-hidden="true">
+            <div class="mini-card">
+              <span class="mini-dot"></span>
+              Deploy pipeline
+              <strong>Healthy</strong>
+            </div>
+            <div class="mini-card">
+              <span class="mini-dot"></span>
+              Model routing
+              <strong>Live</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="value-props" aria-label="Why work with us">
+        <div class="container value-grid">
+          <article class="value-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 6.4H21l-5.3 3.9 2 6.2L12 16.6 6.3 19.5l2-6.2L3 9.4h6.8L12 3z"/></svg>
+            <h2>AI-First Mindset</h2>
+            <p>Optimised intelligence integrated into every line of code.</p>
+          </article>
+          <article class="value-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 10-14h-7l0-6z"/></svg>
+            <h2>Rapid Deployment</h2>
+            <p>Go from concept to a market-ready product in weeks.</p>
+          </article>
+          <article class="value-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V6h2v12H4zm5 0V10h2v8H9zm5 0V4h2v14h-2zm5 0v-6h2v6h-2z"/></svg>
+            <h2>Scalable Infrastructure</h2>
+            <p>Robust cloud foundations that grow with the business.</p>
+          </article>
+          <article class="value-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v3H4V7zm0 7h10v3H4v-3zm12 0h4v3h-4v-3z"/></svg>
+            <h2>Legacy Modernization</h2>
+            <p>Upgrade and revitalise existing systems to current standards.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-heading">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">About us</p>
+            <h2 id="about-heading">A consultancy that ships, not just advises</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              VectorEdge AI is a small Australian IT consultancy. We solve practical technology
+              problems — including AI — and leave clients with systems they can actually run.
+            </p>
+            <p>
+              We have taken existing web apps that were stuck short of production, rebuilt them to
+              a professional standard, and moved them onto current platforms and engineering
+              practices. We have also designed and delivered new web applications for clients who
+              needed something purpose-built.
+            </p>
+            <p>
+              AI is part of how we work, not a slogan. We use it where it reduces cost, risk, or
+              time-to-value — and we leave it out where a simpler system is the better product.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="services" aria-labelledby="services-heading">
+        <div class="container">
+          <p class="eyebrow">What we build</p>
+          <h2 id="services-heading">Precision Capabilities</h2>
+          <div class="services-grid">
+            <article class="service-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg>
+              <h3>Web Apps</h3>
+              <p>Bespoke platforms built with Next.js and robust cloud-native backends.</p>
+            </article>
+            <article class="service-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
+              <h3>Mobile Apps</h3>
+              <p>High-performance iOS and Android experiences for the modern user.</p>
+            </article>
+            <article class="service-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2"/></svg>
+              <h3>AI Integrations</h3>
+              <p>Custom LLM implementation and automated intelligence pipelines.</p>
+            </article>
+            <article class="service-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16h8a4 4 0 0 0 0-8H9"/><circle cx="7" cy="16" r="2.2"/><circle cx="17" cy="8" r="2.2"/></svg>
+              <h3>Chatbots</h3>
+              <p>Intelligent agents that handle support and sales with human-like nuance.</p>
+            </article>
+            <article class="service-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 12h6M16.2 8.2l-4.4 2.6M16.2 15.8l-4.4-2.6"/></svg>
+              <h3>API Systems</h3>
+              <p>Secure, scalable, and well-documented REST and GraphQL layers.</p>
+            </article>
+            <article class="service-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16a6 6 0 0 1 12-1 4 4 0 1 1 0 8H8a4 4 0 0 1-2-7.5"/></svg>
+              <h3>DevOps</h3>
+              <p>Continuous integration and deployment for seamless growth.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="process" aria-labelledby="process-heading">
+        <div class="container">
+          <p class="eyebrow">Why VectorEdge AI?</p>
+          <h2 id="process-heading">Our battle-tested roadmap from ideation to scale</h2>
+          <ol class="process-steps">
+            <li>
+              <span class="step-num">01</span>
+              <h3>Discover</h3>
+              <p>Audit and strategy to define technical requirements and the shortest path to value.</p>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <h3>Prototype</h3>
+              <p>Visual design and architecture blueprints before a line of production code is committed.</p>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <h3>Build</h3>
+              <p>Iterative development with bi-weekly deployments you can see, test, and steer.</p>
+            </li>
+            <li>
+              <span class="step-num">04</span>
+              <h3>Launch</h3>
+              <p>Seamless handover, production support, and a foundation that can keep scaling.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section architecture" aria-labelledby="arch-heading">
+        <div class="container architecture-grid">
+          <div>
+            <p class="eyebrow">Built to last</p>
+            <h2 id="arch-heading">Future-Proof Architecture</h2>
+            <p>
+              We design intelligence-led systems that stay operable as the product grows — dashboards
+              operators can trust, and workflows that remove manual busywork.
+            </p>
+            <ul class="check-list">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+                Real-time Intelligence Dashboards
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+                Workflow Automation
+              </li>
+            </ul>
+          </div>
+          <div class="device-stack" aria-hidden="true">
+            <div class="monitor">
+              <div class="monitor-bar">
+                <span></span><span></span><span></span>
+                <em>operations.vectoredge</em>
+              </div>
+              <div class="dash">
+                <div class="dash-kpis">
+                  <div><small>Uptime</small><strong>99.98%</strong></div>
+                  <div><small>Latency</small><strong>42ms</strong></div>
+                  <div><small>Jobs</small><strong>1.2k</strong></div>
+                </div>
+                <svg class="dash-chart" viewBox="0 0 360 90">
+                  <polyline
+                    fill="none"
+                    stroke="#3b82f6"
+                    stroke-width="2.5"
+                    points="0,70 40,62 80,66 120,40 160,48 200,22 240,30 280,18 320,28 360,12"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="#60a5fa"
+                    stroke-width="1.5"
+                    stroke-opacity="0.45"
+                    points="0,78 40,74 80,76 120,60 160,64 200,50 240,54 280,46 320,52 360,44"
+                  />
+                </svg>
+                <div class="dash-bars">
+                  <span style="height:40%"></span>
+                  <span style="height:62%"></span>
+                  <span style="height:48%"></span>
+                  <span style="height:78%"></span>
+                  <span style="height:55%"></span>
+                  <span style="height:88%"></span>
+                </div>
+              </div>
+            </div>
+            <div class="tablet">
+              <div class="tablet-row"><span></span><b>Queue health</b></div>
+              <div class="tablet-row"><span></span><b>Model spend</b></div>
+              <div class="tablet-row"><span></span><b>Release 2.4</b></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compare" aria-labelledby="compare-heading">
+        <div class="container">
+          <p class="eyebrow">Why VectorEdge AI?</p>
+          <h2 id="compare-heading">The engineering difference for high-growth ventures</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Traditional Approach</th>
+                  <th>VectorEdge AI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Speed to market</td>
+                  <td>6–12 months to MVP</td>
+                  <td>4–8 weeks to MVP</td>
+                </tr>
+                <tr>
+                  <td>Engineering quality</td>
+                  <td>Outsourced templates</td>
+                  <td>Enterprise-grade code</td>
+                </tr>
+                <tr>
+                  <td>AI integration</td>
+                  <td>Generic plugins</td>
+                  <td>Custom-trained models</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+          <p class="eyebrow">Client voices</p>
+          <h2 id="testimonials-heading">What delivery feels like</h2>
+          <p class="section-note">Placeholder quotes until we publish named client stories.</p>
+          <div class="quote-grid">
+            <blockquote>
+              <p>
+                They took a web app that had stalled in development and got it to production with
+                proper testing, deployment, and documentation. We finally had something we could
+                run with confidence.
+              </p>
+              <footer>
+                <strong>Priya S.</strong>
+                <span>Founder, professional services</span>
+              </footer>
+            </blockquote>
+            <blockquote>
+              <p>
+                We needed a new internal platform, not another slide deck. VectorEdge shipped in
+                weeks, explained the trade-offs in plain language, and left us with a codebase our
+                team could extend.
+              </p>
+              <footer>
+                <strong>James T.</strong>
+                <span>Operations lead, Melbourne</span>
+              </footer>
+            </blockquote>
+            <blockquote>
+              <p>
+                The AI piece was practical — a workflow that actually saved hours, not a chatbot
+                bolted on for the pitch. They were honest about what not to automate.
+              </p>
+              <footer>
+                <strong>Elena R.</strong>
+                <span>Product owner, SaaS</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container contact-wrap">
+          <div class="contact-details">
+            <a href="mailto:vectoredgeai@gmail.com">vectoredgeai@gmail.com</a>
+            <a href="tel:+61434227805">0434 227 805</a>
+          </div>
+          <div class="form-card">
+            <h2 id="contact-heading">Let's Build Something Intelligent</h2>
+            <p>Tell us about your project and we will get back to you within 24 hours.</p>
+            <form id="inquiry-form" novalidate>
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+              <label>
+                Full name
+                <input type="text" name="name" placeholder="Jane Citizen" required autocomplete="name" />
+              </label>
+              <label>
+                Email address
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="jane@company.com.au"
+                  required
+                  autocomplete="email"
+                />
+              </label>
+              <label>
+                Project scope
+                <select name="scope" required>
+                  <option value="" disabled selected>Select a scope</option>
+                  <option>MVP Development</option>
+                  <option>Legacy modernisation</option>
+                  <option>AI integration</option>
+                  <option>Web application</option>
+                  <option>Mobile application</option>
+                  <option>Something else</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" placeholder="What are you trying to ship?" required></textarea>
+              </label>
+              <button class="btn btn-primary btn-block" type="submit">Submit Inquiry</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <a class="logo" href="./">
+            <span class="logo-mark" aria-hidden="true"></span>
+            VectorEdge AI
+          </a>
+          <p>© 2026 VectorEdge AI Consultancy. Simple is the Solution.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="#" aria-disabled="true">LinkedIn</a>
+          <a href="#" aria-disabled="true">GitHub</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
