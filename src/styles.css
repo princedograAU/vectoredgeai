@@ -119,7 +119,7 @@ textarea {
 }
 
 .logo-on-light .brand-logo {
-  content: url("/brand-logo-blue.png");
+  content: url("./assets/brand-logo-blue.png");
 }
 
 .site-nav {

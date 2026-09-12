@@ -5,8 +5,8 @@ import { defineConfig } from "vite";
 const root = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  // Project Pages live at /vectoredgeai/; local `vite`/`preview` stay at `/`.
-  base: process.env.GITHUB_ACTIONS ? "/vectoredgeai/" : "/",
+  // Relative asset URLs work on both the custom domain and GitHub's project subpath.
+  base: "./",
   build: {
     rollupOptions: {
       input: {
