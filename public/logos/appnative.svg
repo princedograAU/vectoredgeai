@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 36" fill="none" role="img" aria-label="Appnative">
+  <path d="M6 30 L18 6 L30 30" stroke="#3B82F6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 30 L18 18 L24 30" stroke="#60A5FA" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="40" y="24" fill="#F4F7FB" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="-0.01em">appnative</text>
+</svg>
