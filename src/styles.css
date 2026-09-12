@@ -109,19 +109,17 @@ textarea {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
   white-space: nowrap;
 }
 
-.logo-mark {
-  width: 18px;
-  height: 18px;
-  transform: rotate(45deg);
-  border: 2px solid var(--blue);
-  background: linear-gradient(135deg, var(--blue), transparent 60%);
-  flex-shrink: 0;
+.brand-logo {
+  display: block;
+  width: 160px;
+  height: auto;
+}
+
+.logo-on-light .brand-logo {
+  content: url("/brand-logo-blue.png");
 }
 
 .site-nav {
