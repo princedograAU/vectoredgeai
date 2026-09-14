@@ -1,3 +1,6 @@
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
+
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 const nav = document.querySelector("#site-nav");
@@ -6,11 +9,19 @@ const header = document.querySelector(".site-header");
 const form = document.querySelector("#inquiry-form");
 const statusEl = document.querySelector(".form-status");
 
+let lenis = null;
+
+function setHeaderScrolled(offset) {
+  header?.classList.toggle("scrolled", offset > 8);
+}
+
 function setMenuOpen(open) {
   nav?.classList.toggle("open", open);
   document.body.classList.toggle("menu-open", open);
   toggle?.setAttribute("aria-expanded", String(open));
   if (toggle) toggle.textContent = open ? "Close" : "Menu";
+  if (open) lenis?.stop();
+  else lenis?.start();
 }
 
 toggle?.addEventListener("click", () => {
@@ -30,7 +41,8 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("scroll", () => {
-  header?.classList.toggle("scrolled", window.scrollY > 8);
+  if (lenis) return;
+  setHeaderScrolled(window.scrollY);
 });
 
 form?.addEventListener("submit", async (event) => {
@@ -178,7 +190,7 @@ function createNeuralField(canvas, host, options = {}) {
     spotlight.y += (targetY - spotlight.y) * ease;
 
     const radius = Math.min(width, height) * (follow ? 0.36 : 0.32);
-    const connectDist = Math.min(theme === "tile" ? 168 : 190, Math.max(90, width * 0.12));
+    const connectDist = Math.min(theme === "tile" ? 168 : 190, Math.max(90, width * 0.11));
 
     if (!reducedMotion.matches) {
       for (const node of nodes) {
@@ -297,7 +309,62 @@ function initHeroNetwork() {
   createNeuralField(canvas, hero, { followPointer: true, theme: "hero" });
 }
 
+function initHeroKinetic() {
+  const hero = document.querySelector(".hero");
+  const video = document.querySelector(".hero-kinetic");
+  if (!hero || !video) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches) return;
+
+  function activate() {
+    hero.classList.add("has-kinetic");
+  }
+
+  video.addEventListener("loadeddata", activate);
+  video.addEventListener("canplay", () => {
+    video.play().catch(() => {});
+  });
+
+  if (video.readyState >= 2) activate();
+  else {
+    video.load();
+    window.setTimeout(() => {
+      if (video.readyState >= 2) activate();
+    }, 1200);
+  }
+}
+
 initHeroNetwork();
+initHeroKinetic();
+
+function initSmoothScroll() {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches) return;
+
+  const headerOffset =
+    -(Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 64) - 20;
+
+  lenis = new Lenis({
+    autoRaf: true,
+    smoothWheel: true,
+    lerp: 0.08,
+    wheelMultiplier: 0.9,
+    syncTouch: false,
+    stopInertiaOnNavigate: true,
+    anchors: {
+      offset: headerOffset,
+      duration: 1.2,
+    },
+  });
+
+  lenis.on("scroll", ({ scroll }) => {
+    setHeaderScrolled(scroll);
+  });
+  setHeaderScrolled(window.scrollY);
+}
+
+initSmoothScroll();
 
 function initWorkCarousel() {
   const scroller = document.querySelector(".quote-grid");

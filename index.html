@@ -42,19 +42,34 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-heading">
         <canvas id="hero-network" class="hero-network" aria-hidden="true"></canvas>
-        <div class="container hero-copy">
-          <p class="hero-kicker">Upgrade the future with AI</p>
-          <h1 id="hero-heading">
-            <span class="hero-line">Solving Complexity</span>
-            <span class="hero-line hero-line-clarity">Delivering Clarity</span>
-          </h1>
-          <p class="hero-lede">
-            We help Australian startups and small businesses turn tangled systems into software they
-            can actually run.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Let’s talk</a>
-            <a class="btn btn-text" href="#work">See the work</a>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="hero-kicker">Upgrade the future with AI</p>
+            <h1 id="hero-heading">
+              <span class="hero-line">Solving Complexity</span>
+              <span class="hero-line hero-line-clarity">Delivering Clarity</span>
+            </h1>
+            <p class="hero-lede">
+              We help Australian startups and small businesses turn tangled systems into software they
+              can actually run.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Let’s talk</a>
+              <a class="btn btn-text" href="#work">See the work</a>
+            </div>
+          </div>
+          <div class="hero-ai" aria-hidden="true">
+            <video
+              class="hero-kinetic"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./src/assets/hero-kinetic.webm" type="video/webm" />
+              <source src="./src/assets/hero-kinetic.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         <a class="hero-scroll" href="#work">01 — Work</a>
@@ -65,7 +80,7 @@
           <p class="eyebrow">Work</p>
           <h2 id="work-heading">Trusted by teams shipping real products</h2>
           <div class="work-carousel">
-          <div class="quote-grid">
+          <div class="quote-grid" data-lenis-prevent-horizontal>
             <blockquote class="work-card">
               <span class="card-index">01</span>
               <p class="testimonial-copy">
