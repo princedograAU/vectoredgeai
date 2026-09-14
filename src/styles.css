@@ -459,6 +459,7 @@ textarea {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  animation: hero-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 h1,
@@ -480,10 +481,55 @@ h1 {
 
 .hero-line {
   display: block;
+  animation: hero-slam 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-line:first-child {
+  animation-delay: 0.08s;
 }
 
 .hero-line-clarity {
+  position: relative;
+  color: var(--text);
+  animation-delay: 0.2s;
+}
+
+.hero-line-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
   color: var(--primary);
+  clip-path: inset(0 100% 0 0);
+  animation: hero-red-wipe 0.85s 0.72s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes hero-slam {
+  from {
+    opacity: 0;
+    transform: translate3d(-2.5rem, 0.9rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-red-wipe {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.65rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 h2 {
@@ -501,6 +547,7 @@ h3 {
   color: var(--muted);
   font-size: 1.15rem;
   overflow-wrap: break-word;
+  animation: hero-enter 0.8s 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-actions {
@@ -509,6 +556,7 @@ h3 {
   align-items: center;
   gap: 1.4rem;
   flex-wrap: wrap;
+  animation: hero-enter 0.8s 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-scroll {
@@ -1611,5 +1659,24 @@ textarea:focus {
 
   .hero-marquee-track.is-down {
     transform: translateY(-18%);
+  }
+
+  .hero-kicker,
+  .hero-line,
+  .hero-line-fill,
+  .hero-lede,
+  .hero-actions {
+    animation: none;
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-line-clarity {
+    color: var(--primary);
+  }
+
+  .hero-line-fill {
+    display: none;
   }
 }
