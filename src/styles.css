@@ -318,14 +318,82 @@ textarea {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(16rem, 24rem) minmax(0, 1fr);
   align-items: center;
+  column-gap: 1.25rem;
   min-height: 0;
 }
 
 .hero.has-kinetic .hero-layout {
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(15rem, 22rem) minmax(0, 0.9fr) minmax(0, 1.05fr);
   min-height: min(68vh, 40rem);
+}
+
+.hero-marquee {
+  position: relative;
+  align-self: stretch;
+  min-height: min(62vh, 36rem);
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+}
+
+.hero-marquee-track {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.hero-marquee-group {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.hero-marquee-track span {
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 3.8vw, 4.35rem);
+  font-weight: 500;
+  line-height: 0.84;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-marquee-track.is-up {
+  color: var(--text);
+  opacity: 0.72;
+  animation: hero-marquee-up 34s linear infinite;
+}
+
+.hero-marquee-track.is-down {
+  left: 1.1rem;
+  color: var(--primary);
+  mix-blend-mode: multiply;
+  animation: hero-marquee-down 40s linear infinite;
+}
+
+.hero-marquee-track.is-down .hero-marquee-group {
+  align-items: flex-end;
+}
+
+@keyframes hero-marquee-up {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes hero-marquee-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .hero-copy {
@@ -438,7 +506,7 @@ h3 {
   position: absolute;
   bottom: 1.8rem;
   left: max(1.5rem, calc((100% - 1180px) / 2));
-  z-index: 1;
+  z-index: 2;
   color: var(--muted);
   font-size: 0.78rem;
   letter-spacing: 0.18em;
@@ -537,6 +605,11 @@ h3 {
   line-height: 1.65;
   scrollbar-width: thin;
   scrollbar-color: var(--primary) transparent;
+}
+
+.name-accent {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .testimonial-footer {
@@ -1197,6 +1270,10 @@ textarea:focus {
     min-height: 0;
   }
 
+  .hero-marquee {
+    display: none;
+  }
+
   .hero.has-kinetic .hero-ai {
     min-height: 18rem;
   }
@@ -1514,5 +1591,14 @@ textarea:focus {
   .process.is-timeline .process-steps li {
     animation: none;
     opacity: 1;
+  }
+
+  .hero-marquee-track.is-up,
+  .hero-marquee-track.is-down {
+    animation: none;
+  }
+
+  .hero-marquee-track.is-down {
+    transform: translateY(-18%);
   }
 }
