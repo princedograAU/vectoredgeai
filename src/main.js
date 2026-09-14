@@ -126,7 +126,7 @@ function createNeuralField(canvas, host, options = {}) {
     nodes = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: 1.2 + Math.random() * 2,
+      r: theme === "tile" ? 1.2 + Math.random() * 2 : 1.9 + Math.random() * 2.8,
       vx: (Math.random() - 0.5) * (theme === "tile" ? 0.22 : 0.28),
       vy: (Math.random() - 0.5) * (theme === "tile" ? 0.22 : 0.28),
     }));
@@ -190,7 +190,7 @@ function createNeuralField(canvas, host, options = {}) {
     spotlight.y += (targetY - spotlight.y) * ease;
 
     const radius = Math.min(width, height) * (follow ? 0.36 : 0.32);
-    const connectDist = Math.min(theme === "tile" ? 168 : 190, Math.max(90, width * 0.11));
+    const connectDist = Math.min(theme === "tile" ? 168 : 210, Math.max(90, width * (theme === "tile" ? 0.11 : 0.13)));
 
     if (!reducedMotion.matches) {
       for (const node of nodes) {
@@ -213,15 +213,18 @@ function createNeuralField(canvas, host, options = {}) {
         const midX = (a.x + b.x) / 2;
         const midY = (a.y + b.y) / 2;
         const light = Math.max(0, 1 - Math.hypot(midX - spotlight.x, midY - spotlight.y) / radius);
-        const strength = (1 - dist / connectDist) * (0.14 + light * 0.7);
+        const strength = (1 - dist / connectDist) * (theme === "tile" ? 0.14 + light * 0.7 : 0.22 + light * 0.78);
         if (strength < 0.04) continue;
 
         if (theme === "tile") {
           ctx.strokeStyle = rgba(mix(CREAM, GOLD, 0.35 + light * 0.55), Math.min(0.34, strength * 0.62));
           ctx.lineWidth = 1;
         } else {
-          ctx.strokeStyle = rgba(mix(CHARCOAL, mix(PRIMARY, GOLD, light), Math.max(0.2, light)), strength);
-          ctx.lineWidth = light > 0.45 ? 1.35 : 1;
+          ctx.strokeStyle = rgba(
+            mix(CHARCOAL, mix(PRIMARY, GOLD, light * 0.7), Math.max(0.08, light * 0.72)),
+            Math.min(0.78, strength * 1.28)
+          );
+          ctx.lineWidth = light > 0.45 ? 1.7 : 1.25;
         }
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -238,10 +241,10 @@ function createNeuralField(canvas, host, options = {}) {
         ctx.arc(node.x, node.y, node.r + light * 1.1, 0, Math.PI * 2);
         ctx.fill();
       } else {
-        const color = mix(CHARCOAL, mix(PRIMARY, GOLD, light), Math.max(0.15, light));
-        ctx.fillStyle = rgba(color, 0.28 + light * 0.72);
+        const color = mix(CHARCOAL, mix(PRIMARY, GOLD, light * 0.65), Math.max(0.1, light * 0.7));
+        ctx.fillStyle = rgba(color, 0.42 + light * 0.7);
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.r + light * 1.8, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, node.r + light * 2.4, 0, Math.PI * 2);
         ctx.fill();
       }
     }
